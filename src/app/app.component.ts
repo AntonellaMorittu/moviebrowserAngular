@@ -28,7 +28,7 @@ export class AppComponent {
 
     movieSelected(id){
     sessionStorage.setItem('movieId', id);
-    window.location = 'info.component.html';
+    window.location = '/info/:{{result.imdbID}}';
     return false;
   }
 
