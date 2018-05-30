@@ -27,9 +27,6 @@ export class SearchService {
       .map(res => res.json());
   }
 
-  getMovieInfo(movieId) {
-      return this.http
-      .get(this.baseUrl + this.apiKeyUrlId + movieId);
-    }
+  
 
 }
