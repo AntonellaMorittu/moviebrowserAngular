@@ -1,0 +1,24 @@
+<div class="row">
+  <img src="{{ result.Poster }}" class="thumbnail">
+  </div>
+  <div class="col-md-8">
+  <h2>{{ result.Title }}</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Genre:</strong> {{ result.Genre }}</li>
+    <li class="list-group-item"><strong>Released:</strong> {{ result.Released }}</li>
+    <li class="list-group-item"><strong>Rated:</strong> {{ result.Rated }}</li>
+    <li class="list-group-item"><strong>IMDB Rating:</strong> {{ result.imdbRating }}</li>
+    <li class="list-group-item"><strong>Director:</strong> {{ result.Director }}</li>
+    <li class="list-group-item"><strong>Writer:</strong> {{ result.Writer }}</li>
+    <li class="list-group-item"><strong>Actors:</strong> {{ result.Actors }}</li>
+    </ul>
+</div>
+
+<div class="row">
+  <div class="well">
+    <h3 style="padding-top: 20px">Plot</h3>
+    {{ result.Plot }}
+    <hr>
+    <a href="http://imdb.com/title/{{ result.imdbID }}" target="_blank" class="btn btn-primary">View IMDB</a>
+  </div>
+</div>
