@@ -19,8 +19,6 @@ export class AppComponent {
   resultsObject: Object;
   movie: Object;
   searchMovie = new Subject<string>();
-  baseUrl: string = 'http://www.omdbapi.com/?';
-  apiKeyUrlId: string = '&apikey=e0980c6&i=';
   movieId = sessionStorage.getItem('movieId');
 
   constructor(private searchService: SearchService, private http: Http) {
@@ -30,17 +28,14 @@ export class AppComponent {
     });
   }
 
-  movieSelected(id){
-    // sessionStorage.setItem('movieId', id);
-    this.getMovie(id).subscribe(movie => {
-      this.movie = movie;
-      console.log(movie);
-    });
-    return false;  // window.location = 'info/:{{id}}';
-  }
+  // movieSelected(id){
+  //   // sessionStorage.setItem('movieId', id);
+  //   this.getMovie(id).subscribe(movie => {
+  //     this.movie = movie;
+  //     console.log(movie);
+  //   });
+  //   return false;  // window.location = 'info/:{{id}}';
+  // }
 
-  getMovie(id){
-    return this.http
-      .get(this.baseUrl + this.apiKeyUrlId + id + '&plot=full')
-      .map(res => res.json());
-  }
+
+}
