@@ -2,19 +2,18 @@
   <h1 class="display-3" style="color: mediumslateblue;">Welcome to {{ title }}!</h1>
   <p class="lead">Looking for a movie?</p>
   <p class="lead">
-    <input (keyup)="searchMovie$.next($event.target.value)" placeholder="Type a title..">
+    <input (keyup)="searchMovie.next($event.target.value)" placeholder="Type a title..">
   </p>
 </div>
 
+<app-info [movie]="movie"></app-info>
+
 <div class="well text-center">
-  <ng-container *ngFor="let result of results | slice:0:100" class="container" >
+  <ng-container *ngFor="let result of resultsObject | slice:0:100" class="container" >
       <h1 style="padding: 1%; font-size: 25px;"> {{ result.Title }} </h1>
-      <!-- <a href="/info/:id"  style="text-decoration: none" > Movie Info </a> -->
-      <a href="/info/:{{result.imdbID}}" (click)="movieSelected(result.imdbID)">Movie Info</a>
+      <a href="" (click)="movieSelected(result.imdbID)">Movie Info</a>
       <div class="poster">
         <img src="{{ result.Poster }}"class="thumbnail"/>
       </div>
   </ng-container>
 </div>
-
-  <router-outlet></router-outlet>

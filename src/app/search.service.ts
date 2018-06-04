@@ -7,26 +7,23 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
 @Injectable()
-export class SearchService {
+export class SearchService { 
   baseUrl: string = 'http://www.omdbapi.com/?';
   apiKeyUrl: string = '&apikey=e0980c6&s=';
   apiKeyUrlId: string = '&apikey=e0980c6&i=';
-
 
   constructor(private http: Http) { }
 
   search(movies: Observable<string>) {
     return movies.debounceTime(400)
       .distinctUntilChanged()
-      .switchMap(movie => this.searchEntries(movie));
+      .switchMap(movieTitle => this.searchEntries(movieTitle));
   }
 
-  searchEntries(movie) {
+  searchEntries(movieTitle) {
     return this.http
-      .get(this.baseUrl + this.apiKeyUrl + movie)
+      .get(this.baseUrl + this.apiKeyUrl + movieTitle)
       .map(res => res.json());
   }
-
-  
 
 }

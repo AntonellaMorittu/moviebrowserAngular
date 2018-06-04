@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -11,12 +10,11 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  movies: any[];
+  @Input() movie: any;
 
-  constructor(private http: Http, searchService: SearchService) { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
 
   }
-
 }
