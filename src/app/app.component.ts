@@ -28,14 +28,4 @@ export class AppComponent {
     });
   }
 
-  // movieSelected(id){
-  //   // sessionStorage.setItem('movieId', id);
-  //   this.getMovie(id).subscribe(movie => {
-  //     this.movie = movie;
-  //     console.log(movie);
-  //   });
-  //   return false;  // window.location = 'info/:{{id}}';
-  // }
-
-
 }
