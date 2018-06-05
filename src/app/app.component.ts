@@ -20,6 +20,10 @@ export class AppComponent {
   movie: Object;
   searchMovie = new Subject<string>();
   movieId = sessionStorage.getItem('movieId');
+  visible = true;
+  
+
+
 
   constructor(private searchService: SearchService, private http: Http) {
     this.searchService.search(this.searchMovie)

@@ -24,7 +24,6 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.getMovie(id).subscribe(movie => this.movie = movie);
-
   }
 
   getMovie(id){
