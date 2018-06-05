@@ -1,13 +1,23 @@
+.navbar.bg-dark {
+  background-color: #c3f400eb !important;
+  border: 1px solid white;
+}
 .well {
   padding: 50px;
 }
 
+.display-info {
+  color: white;
+  font-size: 48px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
 .col-md-8 {
   padding-left: 41px;
 }
 
 #poster {
-  padding: 4%;
+  padding: 3%;
 }
 
 .btn-primary {
