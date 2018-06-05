@@ -21,8 +21,10 @@ export class AppComponent {
   searchMovie = new Subject<string>();
   movieId = sessionStorage.getItem('movieId');
   visible = true;
-  
 
+  toggleDiv() {
+    this.visible = !this.visible;
+  }
 
 
   constructor(private searchService: SearchService, private http: Http) {

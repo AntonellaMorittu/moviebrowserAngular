@@ -9,7 +9,7 @@
 
 <router-outlet></router-outlet>
 
-<div class="well text-center">
+<div class="well text-center" *ngIf="visible" >
   <ng-container *ngFor="let result of resultsObject | slice:0:100" class="container" >
       <h1 style="padding: 1%; font-size: 25px;"> {{ result.Title }} </h1>
       <a routerLink="/info/{{result.imdbID}}" (click)="toggleDiv()">Movie Info</a>
