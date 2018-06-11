@@ -22,7 +22,7 @@ export class AppComponent {
   movieId = sessionStorage.getItem('movieId');
   visible = true;
 
-  toggleDiv() {
+  navDiv() {
     this.visible = !this.visible;
   }
 
